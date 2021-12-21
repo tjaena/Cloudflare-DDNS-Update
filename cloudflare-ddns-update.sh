@@ -43,8 +43,8 @@ fi
 
 pushd "${updatedir}" > /dev/null 2>&1
 
-export newip4=$(curl -4 -s myipv4.machineitservices.com)
-export newip6=$(curl -6 -s myipv6.machineitservices.com)
+export newip4=$(curl -4 -s api.ipify.org)
+export newip6=$(curl -6 -s api6.ipify.org)
 
 if $([[ "${setip4}" == *"connection timed out"* ]] || [ "${newip4}" == "" ] || [ "${setip4}" == "" ] || $(unset newip4 && echo false)) && \
 	$([[ "${setip6}" == *"connection timed out"* ]] || [ "${newip6}" == "" ] || [ "${setip6}" == "" ] || $(unset newip6 && echo false)); then
